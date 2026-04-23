@@ -1,7 +1,7 @@
-// 08 61 02 00 02 80 40 02 68 80 10 00 00 00 53                            //数据格式
-// |  |   |  |  |  |  |   |   |   |          |
-// 帧 型  停 故 挡 云  灯  速  电  错          校
-// 头 号  车 障 位 动  条  度  量  码          验
+//   08 61 02 00 02 80 40 02 68 80 10 00 00 00 53                          //数据格式
+//   |  |   |  |  |  |  |   |   |   |          |
+//   帧 型  停 故 挡 云  灯  速  电  错          校
+//   头 号  车 障 位 动  条  度  量  码          验
 
 #include <BLEDevice.h>
 #define RX_PIN  0                                                          //接收引脚
@@ -81,7 +81,7 @@ void setup() {
   Serial.begin(115200);
   BLEDevice::init("");
   BLEDevice::getScan()->setAdvertisedDeviceCallbacks(new BLECallbacks());
-
+  
   rmtInit(RX_PIN, RMT_RX_MODE, RMT_MEM_NUM_BLOCKS_1, 1000000);             //基础配置
   rmtInit(TX_PIN, RMT_TX_MODE, RMT_MEM_NUM_BLOCKS_1, 1000000);
   rmtSetRxMinThreshold(RX_PIN, 2);
